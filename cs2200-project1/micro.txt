@@ -1,0 +1,71 @@
+FETCH0: DrPC, LdMAR, LdA
+FETCH1: DrMem, LdIR
+FETCH2: DrALU, LdPC, OPTest, ALUSel=11
+
+
+ADD0: RegSel=01, DrReg, LdA
+ADD1: RegSel=10, DrReg, LdB
+ADD2: DrALU, WrReg, RegSel=00, ALUSel=00
+
+
+NAND0: RegSel=01, DrReg, LdA
+NAND1: RegSel=10, DrReg, LdB
+NAND2: DrALU, WrReg, RegSel=00, ALUSel=10
+
+
+ADDI0: RegSel=01, DrReg, LdA
+ADDI1: DrOff, LdB
+ADDI2: DrALU, WrReg, RegSel=00, ALUSel=00
+
+
+LW0: RegSel=01, DrReg, LdA
+LW1: DrOFF, LdB
+LW2: DrALU, LdMAR, ALUSel=00
+LW3: DrMEM, WrReg, RegSel=00
+
+
+SW0: DrReg, LdA
+SW1: DrOFF, LdB
+SW2: DrALU, LdMAR
+SW3: DrReg, WrMEM
+
+
+GOTO0: DrPC, LdA
+GOTO1: DrOFF, LdB
+GOTO2: LdPc, DrALU, ALUSel=00
+
+
+JALR0: DrPC, WrReg
+JALR1: DrReg, LdPC, RegSel=01
+
+
+HALT0:
+
+
+SKP0: RegSel=01,DrReg, LdA
+SKP1: RegSel=10, DrReg, LdB
+SKP2: DrALU, ALUSel=01, LdCmp
+SKP3: ChkCmp
+SKP4: DrPC, LdA
+SKP5: ALUSel=11, DrALU, LdPC
+
+
+LEA0: DrPC, LdA
+LEA1: DrOFF, LdB
+LEA2: WrReg, RegSel=00, DrALU, ALUSel=00
+
+
+
+
+
+
+
+
+sw, goto, jalr, skp
+
+
+
+
+
+
+

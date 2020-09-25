@@ -1,0 +1,24 @@
+CS 2200 Fall 2019
+Homework 2
+
+Name: Jared Raiola
+GT Username: jraiola3
+
+Short Answer
+----------
+
+lea 	$at, LABEL	!Loads the address of LABEL word into the target address
+jalr	$ra, $at	!Jumps to the address of the target address
+
+LABEL: 
+	!more code here with no return to the caller
+
+The lea opcode allows us to load in a memory address which can then be accessed by
+the jalr opcode call, which will also save a return address in case the callee wants
+to return to the caller. If the callee never returns to the return address ($ra), jalr
+acts as goto, loading the memory address in $at, with the caveat of $ra needing to be 
+reset off either from the stack or set as a new value later.
+
+
+
+
